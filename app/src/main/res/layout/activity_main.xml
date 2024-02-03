@@ -1,0 +1,168 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    Guideline running up and down     -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <!--    Guideline running left to right   -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".275" />
+
+    <!--    Left layout for labels    -->
+    <LinearLayout
+        android:id="@+id/leftHorizontalLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/verticalGuideline"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/totalBillLbl"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center|end"
+            android:textAlignment="gravity"
+            android:text="@string/totalBillText"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/percentLbl"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center|end"
+            android:textAlignment="gravity"
+            android:text="@string/tip_percentage"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/peopleLbl"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginEnd="4dp"
+            android:gravity="center|end"
+            android:textAlignment="gravity"
+            android:text="@string/number_of_people"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!--    Right side input boxes   -->
+    <LinearLayout
+        android:id="@+id/rightHorizontalLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalGuideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/totalInputLbl"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/totalInputText"
+            android:autofillHints="@string/totalInputHint"/>
+
+        <EditText
+            android:id="@+id/percentInputLbl"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text="@string/percentInputText"
+            android:autofillHints="@string/percentInputHint" />
+
+        <EditText
+            android:id="@+id/peopleInputLbl"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text="@string/peopleInputText"
+            android:autofillHints="@string/peopleInputHint" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/calcBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="150dp"
+        android:text="@string/calcBtnText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leftHorizontalLayout" />
+
+    <!--    Bottom output layout    -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcBtn"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/splitLbl"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:gravity="center|end"
+            android:text="@string/splitLblText"
+            android:textAlignment="gravity"
+            app:layout_constraintEnd_toEndOf="@id/verticalGuideline"/>
+
+        <TextView
+            android:id="@+id/splitOutputLbl"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:gravity="center|start"
+            android:text="@string/splitOutputText"
+            android:textAlignment="gravity"
+            app:layout_constraintStart_toEndOf="@id/verticalGuideline"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
