@@ -12,7 +12,7 @@
     <string name="calcBtnText">Calculate</string>
     <string name="splitLblText">Total per person:</string>
     <string name="splitOutputText" />
-    <string name="InputError">Invalid Input</string>
-    <string name="InputMissing">Missing Input</string>
-    <string name="OutputError">Output Error</string>
+    <string name="InputError"> </string>
+    <string name="InputMissing"> </string>
+    <string name="OutputError"> </string>
 </resources>

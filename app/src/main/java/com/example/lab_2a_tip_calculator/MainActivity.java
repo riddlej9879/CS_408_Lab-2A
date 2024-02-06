@@ -1,6 +1,5 @@
 package com.example.lab_2a_tip_calculator;
 
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
